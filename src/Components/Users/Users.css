@@ -1,0 +1,29 @@
+.search-bar {
+  margin: 10px;
+  width: 97vw;
+}
+.data-not-found {
+  margin: 10px;
+  font-size: 30px;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table {
+  width: 95vw;
+  margin: auto;
+  border-collapse: collapse;
+}
+.table-head-row {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding: 2px;
+}
+.table-data-row {
+  border-bottom: 1px solid gray;
+  margin: 10px;
+}
+th {
+  padding: 7px;
+  font-weight: 100 !important;
+}
