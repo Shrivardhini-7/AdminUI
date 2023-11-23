@@ -1,5 +1,5 @@
 import "./Users.css";
-import axios from "axios";
+
 import Footer from "../Footer";
 import React, { useEffect, useState, useCallback } from "react";
 import IconButton from "@mui/material/IconButton";
@@ -7,29 +7,24 @@ import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import EditDetails from "../EditDetails";
 
-let Users = () => {
-  const apiEndpoint =
-    "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json";
+
+let Users = ({apiCall}) => {
+  
   let [data, setData] = useState("");
   let [dataPerPage, setDataPerPage] = useState("");
   let [updateUser, setUpdateUser] = useState(-1);
   let [isMarked, setIsMarked] = useState([]);
   let [markAll, setMarkAll] = useState();
 
-  useEffect(() => {
-    apiCall();
-  }, []);
 
-  const apiCall = async () => {
-    try {
-      let response = await axios.get(apiEndpoint);
-      //console.log(response.data);
-      localStorage.setItem("Data", JSON.stringify(response.data));
-      setData(response.data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+
+  useEffect(() => {
+    (async () => {
+      const users = await apiCall();
+      setData(users);
+    })();
+  }, []);
+  
 
   const handleUserData = useCallback((data, startIdx, endIdx) => {
     setDataPerPage(data.slice(startIdx, endIdx));

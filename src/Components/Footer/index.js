@@ -7,8 +7,7 @@ let Footer = ({ usersData, dataHandler, handleDelete }) => {
   let usersCountPerPage = 10;
   let noOfPages = Math.ceil(usersData.length / usersCountPerPage);
   let [page, setPage] = useState(1);
-  //console.log(usersData);
-  //console.log(noOfPages);
+
   useEffect(() => {
     dataHandler(
       usersData,
@@ -16,7 +15,7 @@ let Footer = ({ usersData, dataHandler, handleDelete }) => {
       page * usersCountPerPage
     );
   }, [usersData]);
-
+  
   const handleChange = (event, value) => {
     setPage(value);
     dataHandler(

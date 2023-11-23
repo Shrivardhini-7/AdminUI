@@ -1,6 +1,6 @@
 .search-bar {
   margin: 10px;
-  width: 97vw;
+  width: 100vw;
 }
 .data-not-found {
   margin: 10px;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 .table {
-  width: 95vw;
+  width: 100%;
   margin: auto;
   border-collapse: collapse;
 }
@@ -24,6 +24,9 @@
   margin: 10px;
 }
 th {
-  padding: 7px;
+  padding: 0.1rem;
   font-weight: 100 !important;
+}
+form {
+  width : 100vw;
 }

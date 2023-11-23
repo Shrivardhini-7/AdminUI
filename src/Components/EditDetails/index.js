@@ -1,6 +1,9 @@
 import "./EditDetails.css";
+import { useSnackbar } from "notistack";
 
 let EditDetails = ({ usersData, personData, setData }) => {
+  const { enqueueSnackbar } = useSnackbar();
+  //to handle the changes in the inout fields
   let handleChange = (e) => {
     let newList = usersData.map((value) =>
       value.id === personData.id
@@ -21,6 +24,7 @@ let EditDetails = ({ usersData, personData, setData }) => {
         <input
           type="text"
           name="name"
+          required
           value={personData.name}
           onChange={(e) => {
             handleChange(e);
@@ -32,6 +36,7 @@ let EditDetails = ({ usersData, personData, setData }) => {
           type="text"
           value={personData.email}
           name="email"
+          required
           onChange={(e) => {
             handleChange(e);
           }}
@@ -41,6 +46,7 @@ let EditDetails = ({ usersData, personData, setData }) => {
         <input
           type="text"
           name="role"
+          required
           value={personData.role}
           onChange={(e) => {
             handleChange(e);

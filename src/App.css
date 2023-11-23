@@ -1,7 +1,8 @@
 .App {
-  height: 8vh;
+  height: 9vh;
   text-align: center;
   background-color: #9e2f5f;
   margin: 10px;
   font-size: 40px;
+  width:100vw;
 }
