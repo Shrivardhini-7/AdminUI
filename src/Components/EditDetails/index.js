@@ -1,8 +1,8 @@
 import "./EditDetails.css";
-import { useSnackbar } from "notistack";
+// import { useSnackbar } from "notistack";
 
 let EditDetails = ({ usersData, personData, setData }) => {
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
   //to handle the changes in the inout fields
   let handleChange = (e) => {
     let newList = usersData.map((value) =>
